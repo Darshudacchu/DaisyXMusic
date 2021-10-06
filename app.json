@@ -1,9 +1,9 @@
 {
-  "name": "DaisyXMusic",
+  "name": "PsycoXmusic",
   "logo": "https://telegra.ph/file/36ff1b571aa11df5812de.jpg",
   "description": "Open-Source bot to play songs in your Telegram's Group Voice Chat. Powered by PyTgCalls.",
   "keywords": ["music", "voicechat", "telegram"],
-  "repository": "https://github.com/TeamDaisyX/DaisyXMusic",
+  "repository": "https://github.com/Darshudacchu/PsycoXmusic",
   "stack": "container",
   "buildpacks": [
    {
@@ -80,7 +80,7 @@
     "DURATION_LIMIT": {
       "description": "Max audio duration limit for downloads (minutes).",
       "required": true,
-      "value": "10"
+      "value": "20"
     }
   }
 }
