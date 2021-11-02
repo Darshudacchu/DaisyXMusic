@@ -39,14 +39,14 @@ def _start(client, message):
         parse_mode="markdown",
         reply_markup=InlineKeyboardMarkup(
             [[
-               InlineKeyboardButton("➕ Add me to your Group 🙋‍♀️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+               InlineKeyboardButton("⚜️ ನನ್ನನು ಗ್ರೂಪ್ ಗೆ add ಮಾಡಿ ⚜️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
             ],
             [
-               InlineKeyboardButton("📲 Updates", url=f"https://t.me/{UPDATES_CHANNEL}"),
-               InlineKeyboardButton("💬 Support", url=f"https://t.me/{SUPPORT_GROUP}")
+               InlineKeyboardButton("📲 ಅಪ್ಡೇಟ್ಸ್ ", url=f"https://t.me/{UPDATES_CHANNEL}"),
+               InlineKeyboardButton("💬 ಸಪೋರ್ಟ್ ", url=f"https://t.me/{SUPPORT_GROUP}")
             ],
             [
-               InlineKeyboardButton("🛠 Source Code 🛠", url=f"https://{SOURCE_CODE}")
+               InlineKeyboardButton(" 🍁ಓನರ್🍁 ", url=f"https://{SOURCE_CODE}")
            ]]
         ),
         reply_to_message_id=message.message_id,
@@ -98,14 +98,14 @@ def map(pos):
     elif pos == len(tr.HELP_MSG) - 1:
         url = f"https://t.me/{SUPPORT_GROUP}"
         button = [[
-                    InlineKeyboardButton("➕ Add me to your Group 🙋‍♀️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                    InlineKeyboardButton("⚜️ ನನ್ನನು ಗ್ರೂಪ್ ಗೆ add ಮಾಡಿ ⚜️ ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                   ],
                   [
-                    InlineKeyboardButton(text="📲 Updates", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                    InlineKeyboardButton(text="💬 Support", url=f"https://t.me/{SUPPORT_GROUP}")
+                    InlineKeyboardButton(text="📲 ಅಪ್ಡೇಟ್ಸ್ ", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                    InlineKeyboardButton(text="💬 ಸಪೋರ್ಟ್ ", url=f"https://t.me/{SUPPORT_GROUP}")
                   ],
                   [
-                    InlineKeyboardButton(text="🛠 Source Code 🛠", url=f"https://{SOURCE_CODE}")
+                    InlineKeyboardButton(text=" 🍁ಓನರ್🍁 ", url=f"https://{SOURCE_CODE}")
                   ],
                   [
                     InlineKeyboardButton(text="◀️", callback_data=f"help+{pos-1}")
@@ -123,6 +123,6 @@ def map(pos):
 @Client.on_message(filters.command("help") & ~filters.private & ~filters.channel)
 async def ghelp(_, message: Message):
     await message.reply_text(
-        f"""**🙋‍♀️ Hello there! I can play music in the voice chats of telegram groups & channels.**""",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🟡 Click here for help 🟡", url=f"https://t.me/{BOT_USERNAME}?start")]])
+        f"""**🙋‍♀️ ಹಲೋ ಇಲ್ಲಿ! ನಾನು ಟೆಲಿಗ್ರಾಂ ಗ್ರೂಪ್ಸ್ ಮತ್ತು ಚಾನೆಲ್ಸ್ ವಾಯ್ಸ್ ಚಾಟ್ ಗಳಲ್ಲಿ ಹಾಡುಗಳನ್ನು ಹಾಕುವೆನು .**""",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🟡 ಸಹಾಯಕ್ಕಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ 🟡", url=f"https://t.me/{BOT_USERNAME}?start")]])
     )
