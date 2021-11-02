@@ -33,7 +33,7 @@ async def pmPermit(client: USER, message: Message):
                 return
             await USER.send_message(
                 message.chat.id,
-                "Hi there, This is a music assistant service .\n\n ❗️ Rules:\n   - No chatting allowed\n   - No spam allowed \n\n 👉 **SEND GROUP INVITE LINK OR USERNAME IF USERBOT CAN'T JOIN YOUR GROUP.**\n\n ⚠️ Disclamer: If you are sending a message here it means admin will see your message and join chat\n    - Don't add this user to secret groups.\n   - Don't Share private info here\n\n",
+                "ಹಾಯ್ ನಾನು ಮ್ಯೂಸಿಕ್ ಸಹಾಯಕ .\n\n ❗️ Rules:\n   - No chatting allowed\n   - No spam allowed \n\n 👉 **SEND GROUP INVITE LINK OR USERNAME IF USERBOT CAN'T JOIN YOUR GROUP.**\n\n ⚠️ ಹಕ್ಕು ನಿರಾಕರಣೆ : ನೀವು ಇಲ್ಲಿ ಮೆಸೇಜ್ ಕಳುಹಿಸಿದಲ್ಲಿ ಅಡ್ಮಿನ್ ಅದನ್ನು ಪರಿಶೀಲಿಸಿ ಗ್ರೂಪ್ ಗೆ join ಮಾಡಿಸುವರು \n    - ಇದನ್ನು ಯಾವುದೇ ಸೀಕ್ರೆಟ್ ಗ್ರೂಪಿಗಳಿಗೆ add ಮಾಡಬೇಡಿ .\n   - ನಿಮ್ಮ ಯಾವುದೇ ವಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಇಲ್ಲಿ ಹಾಕಬೇಡಿ \n\n",
             )
             return
 
