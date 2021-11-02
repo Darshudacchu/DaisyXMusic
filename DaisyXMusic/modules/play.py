@@ -722,14 +722,14 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
+                        InlineKeyboardButton("📖 ಪ್ಲೇಯಲಿಸ್ಟ್", callback_data="playlist"),
                         InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
                     ],
                     [
-                        InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
-                        InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
+                        InlineKeyboardButton(text="🎬 ಯೂಟ್ಯೂಬ್", url=f"{url}"),
+                        InlineKeyboardButton(text="ಡೌನ್ಲೋಡ್ 📥", url=f"{dlurl}"),
                     ],
-                    [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
+                    [InlineKeyboardButton(text="❌ ಮುಚ್ಚಿ", callback_data="cls")],
                 ]
             )
             requested_by = message.from_user.first_name
@@ -768,7 +768,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="▶️ <b>Playing</b> here the song requested by {} via Youtube Music 😎".format(
+            caption="▶️ <b>ಪ್ಲೇಯಿಂಗ್</b> here the song requested by {} via Youtube Music 😎".format(
                 message.from_user.mention()
             ),
         )
@@ -781,7 +781,7 @@ async def ytplay(_, message: Message):
     global que
     if message.chat.id in DISABLED_GROUPS:
         return
-    lel = await message.reply("🔄 <b>Processing</b>")
+    lel = await message.reply("🔄 <b>ಪ್ರಕ್ರಿಯೆಯಲ್ಲಿದೆ</b>")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
@@ -834,7 +834,7 @@ async def ytplay(_, message: Message):
             f"<i> {user.first_name} Userbot not in this chat, Ask admin to send /play command for first time or add {user.first_name} manually</i>"
         )
         return
-    await lel.edit("🔎 <b>Finding</b>")
+    await lel.edit("🔎 <b>ಹುಡುಕಲಾಗುತ್ತಿದೆ</b>")
     message.from_user.id
     message.from_user.first_name
 
@@ -842,7 +842,7 @@ async def ytplay(_, message: Message):
     for i in message.command[1:]:
         query += " " + str(i)
     print(query)
-    await lel.edit("🎵 <b>Processing</b>")
+    await lel.edit("🎵 <b>ಪ್ರಕ್ರಿಯೆಯಲ್ಲಿದೆ</b>")
     ydl_opts = {"format": "bestaudio/best"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -868,7 +868,7 @@ async def ytplay(_, message: Message):
             secmul *= 60
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"❌ Videos longer than {DURATION_LIMIT} minutes aren't allowed to play!"
+                f"❌ ವೀಡಿಯೋ {DURATION_LIMIT}ನಿಮಿಷ ಗಳಿಗಿಂತ ಉದ್ದದ್ದು ಪ್ಲೇ ಮಾಡಲು ಅನುಮತಿ ಇಲ್ಲ!"
             )
             return
     except:
@@ -878,14 +878,14 @@ async def ytplay(_, message: Message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
+                InlineKeyboardButton("📖 ಪ್ಲೇಯಲಿಸ್ಟ್", callback_data="playlist"),
+                InlineKeyboardButton("ಮೆನು ⏯ ", callback_data="menu"),
             ],
             [
-                InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
-                InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
+                InlineKeyboardButton(text="🎬 ಯೂಟ್ಯೂಬ್", url=f"{url}"),
+                InlineKeyboardButton(text="ಡೌನ್ಲೋಡ್ 📥", url=f"{dlurl}"),
             ],
-            [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
+            [InlineKeyboardButton(text="❌ ಮುಚ್ಚಿ", callback_data="cls")],
         ]
     )
     requested_by = message.from_user.first_name
@@ -924,7 +924,7 @@ async def ytplay(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="▶️ <b>Playing</b> here the song requested by {} via Youtube Music 😎".format(
+            caption="▶️ <b>ಪ್ಲೇಯಿಂಗ್</b> ಹಾಡನ್ನು ವಿನಂತಿಸಿದವರು {} via ಯೂಟ್ಯೂಬ್ಮ್ಯೂ ಸಿಕ್ 😎".format(
                 message.from_user.mention()
             ),
         )
@@ -937,7 +937,7 @@ async def jiosaavn(client: Client, message_: Message):
     global que
     if message_.chat.id in DISABLED_GROUPS:
         return
-    lel = await message_.reply("🔄 <b>Processing</b>")
+    lel = await message_.reply("🔄 <b>ಪ್ರಕ್ರಿಯೆಯಲ್ಲಿದೆ </b>")
     administrators = await get_administrators(message_.chat)
     chid = message_.chat.id
     try:
@@ -960,14 +960,14 @@ async def jiosaavn(client: Client, message_: Message):
                     invitelink = await client.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b>Add me as admin of yor group first</b>",
+                        "<b>ಮೊದಲು ನನ್ನನು ಗ್ರೂಪ್ ಅಡ್ಮಿನ್ ಮಾಡಿ</b>",
                     )
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message_.chat.id, "I joined this group for playing music in VC"
+                        message_.chat.id, "ನಾನು ಈ ಗ್ರೂಪ್ ನಸಲ್ಲಿ ಸಾಂಗ್ಸ್ ಪ್ಲೇ ಮಾಡಲು join ಆದೆ"
                     )
                     await lel.edit(
                         "<b>helper userbot joined your chat</b>",
@@ -979,7 +979,7 @@ async def jiosaavn(client: Client, message_: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add @DaisyXmusic to your Group and try again</b>",
+                        "\n\nOr manually add @RazeXMusic to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
@@ -994,7 +994,7 @@ async def jiosaavn(client: Client, message_: Message):
     text = message_.text.split(" ", 1)
     query = text[1]
     res = lel
-    await res.edit(f"Searching 🔍 for `{query}` on jio saavn")
+    await res.edit(f"ಹುಡುಕಲಾಗುತ್ತಿದೆ 🔍 for `{query}` on ಜಿಯೋ ಸಾವನ್ ")
     try:
         songs = await arq.saavn(query)
         if not songs.ok:
@@ -1021,15 +1021,15 @@ async def jiosaavn(client: Client, message_: Message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
+                InlineKeyboardButton("📖 ಪ್ಲೇಯಲಿಸ್ಟ್ ", callback_data="playlist"),
+                InlineKeyboardButton("ಮೆನು ⏯ ", callback_data="menu"),
             ],
             [
                 InlineKeyboardButton(
-                    text="Join Updates Channel", url=f"https://t.me/{updateschannel}"
+                    text="Join ಅಪ್ಡೇಟ್ಸ್ ಚಾನೆಲ್ ", url=f"https://t.me/{updateschannel}"
                 )
             ],
-            [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
+            [InlineKeyboardButton(text="❌ ಮುಚ್ಚಿ", callback_data="cls")],
         ]
     )
     file = await convert(wget.download(slink))
@@ -1051,7 +1051,7 @@ async def jiosaavn(client: Client, message_: Message):
         )
 
     else:
-        await res.edit_text(f"{bn}=▶️ Playing.....")
+        await res.edit_text(f"{bn}=▶️ ಪ್ಲೇಯಿಂಗ್.....")
         que[chat_id] = []
         qeue = que.get(chat_id)
         s_name = sname
@@ -1117,7 +1117,7 @@ async def lol_cb(b, cb):
             secmul *= 60
         if (dur / 60) > DURATION_LIMIT:
             await cb.message.edit(
-                f"Music longer than {DURATION_LIMIT}min are not allowed to play"
+                f"ಹಾಡು {DURATION_LIMIT}ನಿಮಿಷ ಗಳಿಗಿಂತ ಜಾಸ್ತಿ ಇದ್ದಲ್ಲಿ ಪ್ಲೇ ಮಾಡಲು ಅನುಮತಿ ಇಲ್ಲ "
             )
             return
     except:
@@ -1134,14 +1134,14 @@ async def lol_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
+                InlineKeyboardButton("📖 ಪ್ಲೇಯಲಿಸ್ಟ್ ", callback_data="playlist"),
+                InlineKeyboardButton("ಮೆನು ⏯ ", callback_data="menu"),
             ],
             [
-                InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
-                InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
+                InlineKeyboardButton(text="🎬 ಯೂಟ್ಯೂಬ್ ", url=f"{url}"),
+                InlineKeyboardButton(text="ಡೌನ್ಲೋಡ್ 📥", url=f"{dlurl}"),
             ],
-            [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
+            [InlineKeyboardButton(text="❌ ಮುಚ್ಚಿ ", callback_data="cls")],
         ]
     )
     requested_by = useer_name
@@ -1162,7 +1162,7 @@ async def lol_cb(b, cb):
         await b.send_photo(
             chat_id,
             photo="final.png",
-            caption=f"#⃣  Song requested by {r_by.mention()} <b>queued</b> at position {position}!",
+            caption=f"#⃣  ಹಾಡನ್ನು ವಿನಂತಿಸಿದವರು {r_by.mention()} <b>queued</b> ಮುಂದಿನ ಸ್ಥಾನದಲ್ಲಿದೆ {position}!",
             reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -1185,6 +1185,6 @@ async def lol_cb(b, cb):
             chat_id,
             photo="final.png",
             reply_markup=keyboard,
-            caption=f"▶️ <b>Playing</b> here the song requested by {r_by.mention()} via Youtube Music 😎",
+            caption=f"▶️ <b>ಪ್ಲೇಯಿಂಗ್</b> ಇಲ್ಲಿ ಹಾಡನ್ನು ವಿನಂತಿಸಿದವರು {r_by.mention()} via ಯೂಟ್ಯೂಬ್ ಮ್ಯೂಸಿಕ್ 😎",
         )
         os.remove("final.png")
