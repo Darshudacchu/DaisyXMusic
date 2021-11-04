@@ -36,7 +36,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 async def ytsearch(_, message: Message):
     try:
         if len(message.command) < 2:
-            await message.reply_text("/search needs an argument!")
+            await message.reply_text("/search ಹುಡುಕುವುದಕ್ಕೆ ಮೊದಲು ಹೆಸರು ನೀಡಿ !")
             return
         query = message.text.split(None, 1)[1]
         m = await message.reply_text("Searching....")
